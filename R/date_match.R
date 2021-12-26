@@ -34,7 +34,7 @@ date_match <-function(d1, d2, idcol, datecol1, datecol2=datecol1, all.x=F,
       names(d2)[ which(names(d2)==datecol1) ] <- datecol2
    }
 
-   n_uniq_iddate <- length(unique(paste(d1[[idcol]], d1[[datecol1]])))
+   n_uniq_iddate <- length(unique(paste(d1$id, d1$date)))
    n_d1 <- nrow(d1)
    if (n_uniq_iddate < n_d1)
        stop(sprintf("datecol1 '%s' repeats within id (%d unique id+date pairs in %d total rows)
